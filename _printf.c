@@ -25,22 +25,22 @@ int _printf(const char *format, ...)
 			switch (*format)
 			{
 				case '%':
-					count += _putchar('%');
+					_putchar('%');
 					break;
 				case 'c':
-					count += _putchar(va_arg(args, int));
+					_putchar(va_arg(args, int));
 					break;
 				case 's':
-					count += _puts(va_arg(args, char*));
+					_puts(va_arg(args, char*));
 					break;
 				default:
-					count += _putchar(*format);
+					_putchar(*format);
 					break;
 			}
 		}
 		else
 		{
-			count += _putchar(*format);
+			_putchar(*format);
 		}
 		format++;
 		count++;

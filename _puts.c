@@ -4,17 +4,13 @@
 /**
  * _puts - ll
  * @str: ll
- * Return: ll
  */
 
-int _puts(const char *str)
+void _puts(const char *str)
 {
-	int cnt = 0;
-
 	while (*str != '\0')
 	{
-		cnt += _putchar(*str);
+		_putchar(*str);
 		str++;
 	}
-	return (cnt);
 }
