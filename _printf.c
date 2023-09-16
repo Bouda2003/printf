@@ -38,8 +38,6 @@ int _printf(const char *format, ...)
 					break;
 			}
 		}
-		else if (*format == ' ')
-			_putchar(*format);
 		else
 		{
 			count += _putchar(*format);
