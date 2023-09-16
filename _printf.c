@@ -38,7 +38,7 @@ int _printf(const char *format, ...)
 					break;
 			}
 		}
-		else if (*format == '\n')
+		else if (*format == ' ')
 		{
 			_putchar(*format);
 		}
