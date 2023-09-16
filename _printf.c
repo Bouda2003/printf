@@ -22,20 +22,23 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			switch (*format)
+			if (format != NULL)
 			{
-				case '%':
-					count += _putchar('%');
-					break;
-				case 'c':
-					count += _putchar(va_arg(args, int));
-					break;
-				case 's':
-					count += _puts(va_arg(args, char*));
-					break;
-				default:
-					count += _putchar(*format);
-					break;
+				switch (*format)
+				{
+					case '%':
+						count += _putchar('%');
+						break;
+					case 'c':
+						count += _putchar(va_arg(args, int));
+						break;
+					case 's':
+						count += _puts(va_arg(args, char*));
+						break;
+					default:
+						count += _putchar(*format);
+						break;
+				}
 			}
 		}
 		else
