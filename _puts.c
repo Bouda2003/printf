@@ -4,10 +4,11 @@
 /**
  * _puts - ll
  * @str: ll
+ * Return: ll
  */
 
 int _puts(const char *str)
-{	
+{
 	if (str == NULL)
 	{
 		_puts("(null)");
