@@ -18,6 +18,10 @@ int _puts(const char *str)
 	{
 		string_length++;
 	}
-	write(1, str, string_length);
+	while (*str != '\0')
+	{
+		_putchar(*str);
+		str++;
+	}
 	return (string_length);
 }
