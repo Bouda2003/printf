@@ -9,6 +9,8 @@
 
 int _puts(const char *str)
 {
+	int i, len;
+
 	if (str == NULL)
 	{
 		str = "(null)";
@@ -19,12 +21,10 @@ int _puts(const char *str)
 		}
 		return (len);
 	}
-	int cnt = 0;
-
-	while (*str != '\0')
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		cnt += _putchar(*str);
-		str++;
+		_putchar(str[i]);
+		len++;
 	}
-	return (cnt);
+	return (len);
 }
