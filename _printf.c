@@ -5,49 +5,39 @@
 
 /**
  * _printf - printf function
- * format: string that printed
+ * @format: string that printed
  * Return: I DONT KNOW
  */
 
 int _printf(const char *format, ...)
 {
 	va_list args;
-	va_start(args, format);
 
-	while (*format != '\0')	
+	va_start(args, format);
+	while (*format != '\0')
 	{
-		
 		if (*format == '%')
 		{
 			format++;
-			
 			switch (*format)
 			{
-				/*
-				case 'd':
-					_putint(va_arg(args, int), 10);
-					break;
-				case 'x':
-		    			_putint(va_arg(args, int), 16);
-		    			break;
-			*/
 				case '%':
 					_putchar('%');
 					break;
 				case 'c':
 					_putchar(va_arg(args, int));
 					break;
-				case 's': 
+				case 's':
 					_puts(va_arg(args, char*));
-		    			break;
+					break;
 				default:
-		    			_putchar(*format);
-		    			break;
+					_putchar(*format);
+					break;
 			}
 		}
 		else
 		{
-	    		_putchar(*format);
+			_putchar(*format);
 		}
 		format++;
 	}
