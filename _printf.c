@@ -22,6 +22,7 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
+			count++;
 			switch (*format)
 			{
 				case '%':
@@ -43,5 +44,7 @@ int _printf(const char *format, ...)
 			_putchar(*format);
 		}
 		format++;
+		count++;
 	}
+	return (count);
 }
