@@ -38,6 +38,10 @@ int _printf(const char *format, ...)
 					break;
 			}
 		}
+		else if (*format == '\n')
+		{
+			_putchar(*format);
+		}
 		else
 		{
 			count += _putchar(*format);
