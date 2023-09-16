@@ -22,7 +22,6 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			count++;
 			switch (*format)
 			{
 				case '%':
