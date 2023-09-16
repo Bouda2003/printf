@@ -18,7 +18,7 @@ int (*get_specifier(char *s))(va_list ap, params_t *params)
 		{"o", print_octal},
 		{"u", print_unsigned},
 		{"x", print_hex},
-		{"x", print_Hex},
+		{"x", print_HEX},
 		{"p", print_address},
 		{"s", print_s},
 		{"r", print_rev},
