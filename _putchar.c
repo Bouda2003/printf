@@ -6,10 +6,12 @@
 /**
  * _putchar - printing one letter
  * @c: the letter that printed
+ * Return: ll
  */
 
-void _putchar(char c)
+int _putchar(char c)
 {
 	write(1, &c, 1);
+	return (1);
 }
 

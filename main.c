@@ -1,7 +1,8 @@
 #include "main.h"
+#include <stdio.h>
 
 void main(void)
 {
-	_printf("%c %% %s %% %c %% %s \n", 'a', "abcd", 'b', "efgh");
-
+	int cnt  = _printf("%c %% %s %% %c %% %s \n", 'a', "abcd", 'b', "efgh");
+	printf ("%d", cnt);
 }
