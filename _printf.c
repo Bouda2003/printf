@@ -30,9 +30,11 @@ int _printf(const char *format, ...)
 				else if (*format == 's' && (format != NULL))
 					count += _puts(va_arg(args, char*))
 				else
-					count += _putchar(*format);
-					format++;
+					_putchar('%');
 		}
+		else
+			count += _putchar(*format);
+			format++;
 	}
 	va_end(args);
 	return (count);
