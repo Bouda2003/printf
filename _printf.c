@@ -38,7 +38,7 @@ int _printf(const char *format, ...)
 						count += _puts(va_arg(args, char*));
 						break;
 					default:
-						count -= 1;
+						count++;
 						_putchar('%');
 						_putchar(*formater);
 						break;
