@@ -13,7 +13,6 @@
 int _printf(const char *format, ...)
 {
 	int count = 0;
-	const char *format;
 	va_list args;
 
 	va_start(args, format);
