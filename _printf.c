@@ -38,6 +38,12 @@ int _printf(const char *format, ...)
 					case 's':
 						count += _puts(va_arg(args, char*));
 						break;
+					case 'd':
+						count += _putint(va_arg(args, int), 10);
+						break;
+					case 'i':
+						count += _putint(va_arg(args, int), 10);
+						break;
 					default:
 						count += 2;
 						_putchar('%');
