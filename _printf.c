@@ -31,7 +31,7 @@ int _printf(const char *format, ...)
 					count += _puts(va_arg(args, char*))
 				else if ((*format == 'd' || *format == 'i') && (format != NULL))
 					count += _putint(va_arg(args, int));
-				else 
+				else
 					count += _putchar(*format);
 					format++;
 		}
