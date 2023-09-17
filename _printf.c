@@ -1,54 +1,49 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdarg.h>
-#include <stdlib.h>
 
 /**
- * _printf - printf function
- * @format: string that printed
- * Return: I DONT KNOW
+ * _printf - prints anything
+ * @format: the format string
+ *
+ * Return: number of bytes printed
  */
-
 int _printf(const char *format, ...)
 {
-	int count = 0;
-	const char *formater;
-	va_list args;
+	int sum = 0;
+	va_list ap;
+	char *p, *start;
+	params_t params = PARAMS_INIT;
 
-	va_start(args, format);
-	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+	va_start(ap, format);
+
+	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
-	formater = format;
-	while (*formater != '\0')
+	if (format[0] == '%' && format[1] == ' ' && !format[2])
+		return (-1);
+	for (p = (char *)format; *p; p++)
 	{
-		if (*formater == '%')
+		init_params(&params, ap);
+		if (*p != '%')
 		{
-			formater++;
-				switch (*formater)
-				{
-					case '%':
-						count += _putchar('%');
-						break;
-					case 'c':
-						count += _putchar(va_arg(args, int));
-						break;
-					case 's':
-						count += _puts(va_arg(args, char*));
-						break;
-					case '\0':
-						count += _putchar('%');
-						break;
-					default:
-						count += 1;
-						_putchar('%');
-						_putchar(*formater);
-						break;
-				}
+			sum += _putchar(*p);
+			continue;
 		}
+		start = p;
+		p++;
+		while (get_flag(p, &params)) /* while char a t p is flag char */
+		{
+			p++; /* next char */
+		}
+		p = get_width(p, &params, ap);
+		p = get_precision(p, &params, ap);
+		if (get_modifier(p, &params))
+			p++;
+		if (!get_specifier(p))
+			sum += print_from_to(start, p, params. l_modifier || params.
+					h_modifier ? p - 1 : 0);
 		else
-			count += _putchar(*formater);
-		formater++;
+			sum += get_print_func(p, ap, &params);
 	}
-	va_end(args);
-	return (count);
+	_putchar(BUF_FLUSH);
+	va_end(ap);
+	return (sum);
 }

@@ -1,10 +1,7 @@
 #include "main.h"
-#include <stdio.h>
 
-void main(void)
+int main ()
 {
-		int cnt;
-
-		cnt = _printf("%s", NULL);
-		printf ("\n%d\n", cnt);
+	hello_world();
+	return (0);
 }

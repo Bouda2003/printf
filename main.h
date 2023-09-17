@@ -1,6 +1,8 @@
-#ifndef MAIN_H
-#define MAIN_H
-int _printf(const char *format, ...);
-int _putchar(char c);
-int _puts(const char *str);
+#ifndef _PRINTF_H
+#define _PRINTF_H
+#include <stdio.h>
+#include <stdlib.h>
+
+void hello_world();
+
 #endif
