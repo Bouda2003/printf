@@ -28,12 +28,7 @@ int _printf(const char *format, ...)
 				else if (*format == 'c' && (format != NULL))
 					count += _putchar(va_arg(args, int));
 				else if (*format == 's' && (format != NULL))
-					count += _puts(va_arg(args, char*));
-				else
-				{
-					count += _putchar('%');
-					count += _putchar(*format);
-				}
+					count += _puts(va_arg(args, char*))
 		}
 		else
 			count += _putchar(*format);
