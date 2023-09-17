@@ -35,6 +35,9 @@ int _printf(const char *format, ...)
 					case 's':
 						count += _puts(va_arg(args, char*));
 						break;
+					case '\0':
+						count += _putchar('%');
+						break;
 					default:
 						count += 1;
 						_putchar('%');
