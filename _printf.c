@@ -13,21 +13,20 @@
 int _printf(const char *format, ...)
 {
 	int count = 0;
-	const char *formater;
+	const char *format;
 	va_list args;
 
 	va_start(args, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
-	formater = format;
-	while (*formater != '\0')
+	while (*format != '\0')
 	{
-		if (*formater == '%')
+		if (*format == '%')
 		{
-			formater++;
-			if (formater != NULL)
+			format++;
+			if (format != NULL)
 			{
-				switch (*formater)
+				switch (*format)
 				{
 					case '%':
 						count += _putchar('%');
@@ -41,14 +40,14 @@ int _printf(const char *format, ...)
 					default:
 						count += 2;
 						_putchar('%');
-						_putchar(*formater);
+						_putchar(*format);
 						break;
 				}
 			}
 		}
 		else
-			count += _putchar(*formater);
-		formater++;
+			count += _putchar(*format);
+		format++;
 	}
 	va_end(args);
 	return (count);
