@@ -1,8 +1,9 @@
 #include "main.h"
 
 /**
- * my_printf - فانكشن لطباع سترينج كامل ومعالجه اي اختلاف في النوع "رقم, سترينج, بوينتر" و هكذا
- * @format: سترينج يتم طباعته
+ * _putint - مم
+ * @num: سترينج يتم طباعته
+ * @base: ll
  * Return: ll
  */
 
@@ -14,7 +15,7 @@ int _putint(int num, int base)
 	if (num == 0)
 	{
 		_putchar('0');
-		return;
+		return (1);
 	}
 	if (num < 0)
 	{
@@ -24,7 +25,11 @@ int _putint(int num, int base)
 	while (num != 0)
 	{
 		int remainder = num % base;
-		buffer[index++] = (remainder < 10) ? ('0' + remainder) : ('A' + remainder - 10);
+
+		if (remainder < 10)
+			buffer[index++] = ('0' + remainder);
+		else
+			buffer[index++] = ('A' + remainder - 10);
 		num /= base;
 	}
 	for (int i = index - 1; i >= 0; i--)
