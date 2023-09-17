@@ -23,20 +23,17 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			if (format != NULL)
-			{
-				if (*format == '%')
+				if (*format == '%' && (format != NULL))
 					count += _putchar('%');
-				else if (*format == 'c')
+				else if (*format == 'c' && (format != NULL))
 					count += _putchar(va_arg(args, int));
-				else if (*format == 's')
+				else if (*format == 's' && (format != NULL))
 					count += _puts(va_arg(args, char*));
 				else
 				{
 					count += _putchar('%');
 					count += _putchar(*format);
 				}
-			}
 		}
 		else
 			count += _putchar(*format);
