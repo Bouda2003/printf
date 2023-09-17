@@ -5,6 +5,6 @@ void main ()
 {
 	int cnt;
 
-	cnt = _printf("%d", 1234);
+	cnt = _printf("%c %%%%%% hi %g", 'd');
 	printf("\n%d\n", cnt);
 }
