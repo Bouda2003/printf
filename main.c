@@ -5,12 +5,12 @@
 /**
  * main - Entry point
  *
- * Return: Always 0
+ * Return: Always 
  */
 int main(void)
 {
 	int cnt;
 
-	cnt = _printf("%c%g%s%g%%%g",'1', "12");
+	cnt = _printf("%c%c%c%c %s",'1', '2', '3', '4', "1234");
 	printf("\n%d\n", cnt);
 }
