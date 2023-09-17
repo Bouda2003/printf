@@ -3,7 +3,8 @@
 loober=$(cat counter.txt)
 echo $loober
 loober=$((loober+1));
-message="t$loober"
+message="commit "
+message+="t$loober"
 git pull
 chmod u+x *.c
 git add .
