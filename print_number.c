@@ -2,7 +2,7 @@
 
 /**
  * print_number - prints a number send to this function
- * @n: number should be printed.
+ * @args: List of arguments
  * Return: The number of arguments printed
  */
 int print_number(int n)
