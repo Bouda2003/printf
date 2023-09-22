@@ -1,16 +1,10 @@
-#include <limits.h>
 #include <stdio.h>
 #include "main.h"
 
-/**
- * main - Entry point
- *
- * Return: Always 
- */
-int main(void)
+void main ()
 {
 	int cnt;
 
-	cnt = _printf("%c%c%c%c %s",'1', '2', '3', '4', "1234");
+	cnt = _printf("%c %%%%%% hi %g", 'd');
 	printf("\n%d\n", cnt);
 }
